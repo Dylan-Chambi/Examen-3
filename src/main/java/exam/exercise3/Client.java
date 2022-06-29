@@ -3,26 +3,29 @@ package exam.exercise3;
 public class Client {
 
     public static void main (String[]args){
-        PagoEfectivo pagoEfectivo = new PagoEfectivo();
-        PagoTransferenciaBancaria pagoTransferenciaBancaria = new PagoTransferenciaBancaria();
-        PagoTigoMoney pagoTigoMoney = new PagoTigoMoney();
-        PagoAplicacionEmpresa pagoAplicacionEmpresa = new PagoAplicacionEmpresa();
+        Estudiante estudiante1 = new Estudiante("Juan", 20);
+        Estudiante estudiante2 = new Estudiante("Pedro", 21);
+        Estudiante estudiante3 = new Estudiante("Maria", 22);
 
-        InstalacionElectrica instalacionElectrica = new InstalacionElectrica();
-        instalacionElectrica.setFormaPago(pagoEfectivo);
-        instalacionElectrica.pagar();
 
-        InstalacionAgua instalacionAgua = new InstalacionAgua();
-        instalacionAgua.setFormaPago(pagoTransferenciaBancaria);
-        instalacionAgua.pagar();
+        Facebook facebook = new Facebook();
 
-        InstalacionAlcantarillado instalacionAlcantarillado = new InstalacionAlcantarillado();
-        instalacionAlcantarillado.setFormaPago(pagoTigoMoney);
-        instalacionAlcantarillado.pagar();
+        SistemaColegio sistemaColegio = new SistemaColegio("Sistema de Colegio", 100, "Todos los estudiantes ser mayor de 10");
+        sistemaColegio.inscribir(estudiante1);
+        sistemaColegio.inscribir(estudiante2);
+        sistemaColegio.inscribir(estudiante3);
 
-        instalacionElectrica.setFormaPago(pagoAplicacionEmpresa);
-        instalacionElectrica.pagar();
+        sistemaColegio.setRedSocial(facebook);
+        sistemaColegio.mostrarDatosRedSocial();
 
+
+        SistemaUniversidad sistemaUniversidad = new SistemaUniversidad("Sistema de Universidad", 100, "Todos los estudiantes ser mayor de 20");
+        sistemaUniversidad.inscribir(estudiante1);
+        sistemaUniversidad.inscribir(estudiante2);
+        sistemaUniversidad.inscribir(estudiante3);
+
+        sistemaUniversidad.setRedSocial(facebook);
+        sistemaUniversidad.mostrarDatosRedSocial();
 
     }
 }
