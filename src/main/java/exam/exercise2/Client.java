@@ -1,39 +1,21 @@
-package ejercicio5.exercise;
+package exam.exercise2;
 
 public class Client {
 
     public static void main (String [] args){
-        AplicacionAndroid aplicacionAndroid = new AplicacionAndroid();
-        AplicacionIOS aplicacionIOS = new AplicacionIOS();
-        AplicacionWindowsPhone aplicacionWindowsPhone = new AplicacionWindowsPhone();
+        CuadratrackGasolina cuadratrackGasolina = new CuadratrackGasolina();
+        CuadratrackDiesel cuadratrackDiesel = new CuadratrackDiesel();
+        CuadratrackGasolinaEspecial cuadratrackGasolinaEspecial = new CuadratrackGasolinaEspecial();
 
-        AdapterAplicacionWeb aplicacionWeb = new AdapterAplicacionWeb(new AplicacionWeb());
-        AdapterAplicacionEscritorio aplicacionEscritorio = new AdapterAplicacionEscritorio(new AplicacionEscritorio());
+        AdapterCuadratrackElectrico cuadratrackElectrico = new AdapterCuadratrackElectrico(new CuadratrackEletrico());
 
-        System.out.println("---------------------Aplicacion Android---------------------");
-        aplicacionAndroid.login();
-        aplicacionAndroid.logout();
-        aplicacionAndroid.reportes();
+        int gasolinaActual =cuadratrackGasolina.estadoCombustible();
+        System.out.println(gasolinaActual);
+        cuadratrackGasolina.llenarCombustible(20);
 
-        System.out.println("---------------------Aplicacion IOS---------------------");
-        aplicacionIOS.login();
-        aplicacionIOS.logout();
-        aplicacionIOS.reportes();
-
-        System.out.println("---------------------Aplicacion WindowsPhone---------------------");
-        aplicacionWindowsPhone.login();
-        aplicacionWindowsPhone.logout();
-        aplicacionWindowsPhone.reportes();
-
-        System.out.println("---------------------Aplicacion Web---------------------");
-        aplicacionWeb.login();
-        aplicacionWeb.logout();
-        aplicacionWeb.reportes();
-
-        System.out.println("---------------------Aplicacion Escritorio---------------------");
-        aplicacionEscritorio.login();
-        aplicacionEscritorio.logout();
-        aplicacionEscritorio.reportes();
+        int cargaActual = cuadratrackElectrico.estadoCombustible();
+        System.out.println(cargaActual);
+        cuadratrackElectrico.llenarCombustible(50);
     }
 
 }

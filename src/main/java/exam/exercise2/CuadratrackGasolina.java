@@ -12,6 +12,7 @@ public class CuadratrackGasolina implements Cuadratrack {
     public void llenarCombustible(int cantidadGasolina) {
         if(cantidadGasolina >= 0 && cantidadGasolina <= 50){
             this.gasolinaActual = cantidadGasolina;
+            System.out.println("Monto de gasolina actual: " + cantidadGasolina);
         }else{
             System.out.println("Rango de gasolina " + cantidadGasolina + " no valido!");
         }
@@ -19,6 +20,7 @@ public class CuadratrackGasolina implements Cuadratrack {
 
     @Override
     public int estadoCombustible() {
-
+        int cantidadRandom = (int) (Math.random()*50);
+        return cantidadRandom;
     }
 }

@@ -1,6 +1,6 @@
 package exam.exercise2;
 
 public interface Cuadratrack {
-    void llenarCombustible(int cantidadGasolina);
+    void llenarCombustible(int cantidadCombustible);
     int estadoCombustible();
 }
