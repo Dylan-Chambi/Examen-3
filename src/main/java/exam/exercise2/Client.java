@@ -9,13 +9,25 @@ public class Client {
 
         AdapterCuadratrackElectrico cuadratrackElectrico = new AdapterCuadratrackElectrico(new CuadratrackEletrico());
 
+        System.out.println("----------------Cuadratrack Gasolina----------------");
         int gasolinaActual =cuadratrackGasolina.estadoCombustible();
-        System.out.println(gasolinaActual);
-        cuadratrackGasolina.llenarCombustible(20);
+        System.out.println("Gasolina actual: " + gasolinaActual);
+        cuadratrackGasolina.llenarCombustible(45);
 
+        System.out.println("----------------Cuadratrack Diesel----------------");
+        int dieselActual = cuadratrackDiesel.estadoCombustible();
+        System.out.println("Diesel actual: " + dieselActual);
+        cuadratrackDiesel.llenarCombustible(36);
+
+        System.out.println("----------------Cuadratrack Gasolina Especial----------------");
+        int gasolinaEspecialActual = cuadratrackGasolinaEspecial.estadoCombustible();
+        System.out.println("Gasolina especial actual: " + gasolinaEspecialActual);
+        cuadratrackGasolinaEspecial.llenarCombustible(13);
+
+        System.out.println("----------------Cuadratrack Electrico----------------");
         int cargaActual = cuadratrackElectrico.estadoCombustible();
-        System.out.println(cargaActual);
-        cuadratrackElectrico.llenarCombustible(50);
+        System.out.println("Carga actual: " + cargaActual);
+        cuadratrackElectrico.llenarCombustible(30); //se vuelve 6
     }
 
 }

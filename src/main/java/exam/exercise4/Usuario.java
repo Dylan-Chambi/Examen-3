@@ -1,21 +1,21 @@
 package exam.exercise4;
 
 public class Usuario {
-    private String id;
+    private int id;
     private String nombre;
     private String password;
 
-    public Usuario(String id, String nombre, String password) {
+    public Usuario(int id, String nombre, String password) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

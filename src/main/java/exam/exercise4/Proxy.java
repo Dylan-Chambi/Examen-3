@@ -4,24 +4,21 @@ package exam.exercise4;
 public class Proxy implements IServer {
     private IServer servidor1;
     private IServer servidor2;
-    private int usuariosLogueados;
 
     public Proxy(){
         servidor1 = new Servidor("Servidor 1");
         servidor2 = new Servidor("Servidor 2");
-        usuariosLogueados = 0;
     }
     @Override
-    public void loqin(Usuario usuario, String password) {
-        if(verificarDatos(usuario, password)) {
-            if(usuariosLogueados % 2 == 0) {
-                servidor1.loqin(usuario, password);
+    public void loqin(Usuario usuario) {
+        if(BaseDatos.getIdUsuariosRegistrados().contains(usuario.getId())){
+            if(isPrimo(usuario.getId())) {
+                servidor1.loqin(usuario);
             } else {
-                servidor2.loqin(usuario, password);
+                servidor2.loqin(usuario);
             }
-            usuariosLogueados++;
         }else{
-            System.out.println("Usuario o contraseña incorrectos");
+            System.out.println("Usuario no registrado en la base de datos");
         }
     }
     @Override
@@ -30,7 +27,14 @@ public class Proxy implements IServer {
         servidor2.showUsuariosLogueados();
     }
 
-    public boolean verificarDatos(Usuario usuario, String password){
-        return usuario.getNombre().equals(password);
+    public static boolean isPrimo(int num) {
+        boolean isPrimo = true;
+        for(int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                isPrimo = false;
+                break;
+            }
+        }
+        return isPrimo;
     }
 }

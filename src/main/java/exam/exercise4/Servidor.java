@@ -13,7 +13,7 @@ public class Servidor implements IServer {
     }
 
     @Override
-    public void loqin(Usuario usuario, String password) {
+    public void loqin(Usuario usuario) {
         System.out.println("Servidor: " + nombreServidor + "> Usuario: " + usuario.getNombre() + " logueado");
         usuariosLogueados.add(usuario);
     }
